@@ -51,7 +51,20 @@ function showData() {
 
         Plotly.newPlot('bubble',bubbleData);
 
-       
+        var data = [
+            {
+              domain: { x: [0, 1], y: [0, 1] },
+              value: metadata.wfreq,
+              title: { text: "Belly Button Washing Frequency" },
+              type: "indicator",
+              mode: "gauge+number",
+              delta: { reference: 400 },
+              gauge: { axis: { range: [0, 9] } }
+            }
+          ];
+          
+          var layout = { width: 600, height: 400 };
+          Plotly.newPlot('gauge', data, layout);
 
     });
 };
